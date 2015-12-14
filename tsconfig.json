@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "out": "./dist/kendo-settings-builder.js", 
+        "sourceMap": true, 
+        "target": "es5"
+    }, 
+    "files": [
+        "./src/index.ts"
+    ]
+}
