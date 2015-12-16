@@ -1,4 +1,4 @@
 
 export class ModelDescriptor {
-	fields;
+	fields = {};
 }

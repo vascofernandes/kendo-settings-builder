@@ -1,4 +1,4 @@
-import { ModelDescriptor } from 'ModelDescriptor';
+import { ModelDescriptor } from './ModelDescriptor';
 
 export class DataSourceSchema {
 	data = 'Data';

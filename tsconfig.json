@@ -3,7 +3,7 @@
         "out": "./dist/kendo-settings-builder.js", 
         "sourceMap": true, 
         "target": "es5",
-        "module": "system"
+        "module": "commonjs"
     },
     "files": [
         "./src/index.ts"

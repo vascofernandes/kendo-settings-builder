@@ -1,7 +1,7 @@
 /// <reference path="../typings/tsd.d.ts" />
 
-import { Transport } from 'Transport';
-import { DataSourceSchema } from 'DataSourceSchema';
+import { Transport } from './Transport';
+import { DataSourceSchema } from './DataSourceSchema';
 
 export class DataSource implements kendo.data.DataSourceOptions {
     type = 'aspnetmvc-ajax';
