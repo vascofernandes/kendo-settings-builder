@@ -12,3 +12,7 @@ node_modules
 # Sublime Text 3 project files
 *.sublime-project
 *.sublime-workspace
+
+# Non distributable JS compiled files
+src/*.js
+src/*.js.map

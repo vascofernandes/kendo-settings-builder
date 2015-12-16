@@ -29,3 +29,10 @@ Build using the Typescript compiler:
   
     npm run tsc
   ```
+  
+Build distributable packages (using Webpack):
+  ```bash
+  
+    npm run build
+  ```
+
