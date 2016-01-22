@@ -47,29 +47,14 @@ var columns = [{
 }];
 */
 
-var modelColumn = [
-    new ModelColumnDescriptor('id', 'Cusomer Id', ModelDescriptorFieldType.Number),
-    new ModelColumnDescriptor('name', 'Cusomer Name', ModelDescriptorFieldType.String),
-];
-
-export var gridOptions = new GridBuilder<ICustomerType>()
-    .Columns(CustomerType, (columns: GridColumnFactory<ICustomerType>) => {
-        columns.Bound((model: ICustomerType) => model.Id).Title('Customer Id');
-        columns.Bound((model: ICustomerType) => model.Name).Title('Customer Name');
+export var gridOptions = new GridBuilder<ICustomerType>(CustomerType)
+    .Columns(columns => {
+        columns.Bound(model => model.Id).Title('Customer Id');
+        columns.Bound(model => model.Name).Title('Customer Name');
     })
-    .DataSource((ds: DataSourceBuilder) => { ds
-        .Schema((model: ModelDescriptorBuilder) => { model
-            .AddField('id', ModelDescriptorFieldType.Number)
-            .AddField('name', ModelDescriptorFieldType.String);
-        })
-        .Schema({
-            id: ModelDescriptorFieldType.Number,
-            name: ModelDescriptorFieldType.String
-        })
-        .Schema(modelColumn)
-        .Schema(CustomerType)
+    .DataSource(ds => { ds
         .Ajax()
-        .Read((op: CrudOperationBuilder) => op.Action('myurl'));
+        .Read(op => op.Action('myurl'));
     })
     .Height(400)
     .Scrollable((sc: GridScrollSettingsBuilder) => { sc

@@ -8,13 +8,13 @@ import { GridScrollSettingsBuilder } from './GridScrollSettingsBuilder';
 export class GridBuilder<TModel> {
     private component;
 
-    constructor() {
+    constructor(private type: any) {
         this.component = new Grid<TModel>();
     }
 
-    Columns(type: any, configurator: Action<GridColumnFactory<TModel>>) {
+    Columns(configurator: Action<GridColumnFactory<TModel>>) {
 
-        var factory = new GridColumnFactory<TModel>(type, this.component);
+        var factory = new GridColumnFactory<TModel>(this.type, this.component);
 
         configurator(factory);
 
@@ -30,7 +30,7 @@ export class GridBuilder<TModel> {
 
         var ds = new DataSource;
 
-        configurator(new DataSourceBuilder(ds));
+        configurator(new DataSourceBuilder(ds).Schema(this.type));
 
         this.component.dataSource = new kendo.data.DataSource(ds);
 
